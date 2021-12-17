@@ -31,6 +31,11 @@ jobs:
     - name: Run Linters
       run: make lint
 
+    - name: Package
+      run: |
+        pip install build
+        make build
+
     - name: Send report to CodeClimate
       run: |
         export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
