@@ -7,6 +7,14 @@
 
 Extra utilities for working with container images. 
 
+## Testing Environment
+
+Two container registries are required to perform tests of copying images. These are set up using `docker` and `docker-compose`, through `make` target:
+
+```bash
+make env
+```
+
 ## Development
 
 - Create virtual environment

@@ -18,12 +18,17 @@ lint:
 	@echo "\n${BLUE}Running Bandit against source files...${NC}\n"
 	@bandit -r --ini setup.cfg
 
+env:
+	@echo "\n${BLUE}Setting up integration testing environment:${NC}\n"
+	@mkdir -p registry
+	@docker-compose up -d
+
 build:
-	@echo "\n${BLUE}Building package:\n"
+	@echo "\n${BLUE}Building package:${NC}\n"
 	@python -m build
 
 deploy:
-	@echo "\n${BLUE}Deploying to PyPI:\n"
+	@echo "\n${BLUE}Deploying to PyPI:${NC}\n"
 
 version:
 	@echo $(TAG)
